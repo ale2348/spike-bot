@@ -8,17 +8,17 @@
 > - **Entry point**
 > - **Momentum variables**
 >
-> The constants in this repo are illustrative. Results on [@dava1414](https://polymarket.com/@dava1414) come from the **full, tuned configuration** — not from this public copy alone.
+> The constants in this repo are illustrative. Results on [@antsaslyku](https://polymarket.com/@antsaslyku) come from the **full, tuned configuration** — not from this public copy alone.
 >
 > **Want the complete bot or to collaborate?** Contact on Telegram:
 >
-> ### [**t.me/dava1414**](https://t.me/dava_1414)
+> ### [**t.me/antsaslyku**](https://t.me/antsaslyku)
 
 **Repository:** [github.com/ale2348/spike-bot](https://github.com/ale2348/spike-bot) · **Author:** [@ale2348](https://github.com/ale2348)
 
 A **Rust** bot for **Polymarket 5-minute crypto Up/Down** markets — **BTC, ETH, SOL, and XRP**. It watches **Binance** spot prices for momentum, then places a **limit buy** on the matching Polymarket Up or Down token at the **current ask**, holds through resolution, and tracks P/L.
 
-**Live profile using this strategy family:** [**@dava1414 on Polymarket**](https://polymarket.com/@dava1414)
+**Live profile using this strategy family:** [**@antsaslyku on Polymarket**](https://polymarket.com/@antsaslyku)
 
 The bot connects to Polymarket Gamma + CLOB APIs, streams live order-book prices, and can run in **simulation mode** (no real orders) or **live mode** with your wallet. Press **Ctrl+C** to stop.
 
@@ -26,7 +26,7 @@ The bot connects to Polymarket Gamma + CLOB APIs, streams live order-book prices
 
 ## Live proof — buy → redeem cycles
 
-These are real on-chain transactions from [@dava1414](https://polymarket.com/@dava1414) on Polygon. Each pair shows the same pattern the bot follows: **buy the favorite late in the window → redeem at $1.00 after resolution**.
+These are real on-chain transactions from [@antsaslyku](https://polymarket.com/@antsaslyku) on Polygon. Each pair shows the same pattern the bot follows: **buy the favorite late in the window → redeem at $1.00 after resolution**.
 
 ### Trade 1 — Jun 11, 2026 · ~$0.99 entry
 
@@ -44,16 +44,20 @@ These are real on-chain transactions from [@dava1414](https://polymarket.com/@da
 | **Buy** | 08:55:01 | Buy favorite @ **~$0.98–$0.99** near window end | [View buy tx](https://polygonscan.com/tx/0x7fa58be45dc24afbc8bd135fc6a7147fb548e2c00ad2f5b6100fa7510dd58b45) |
 | **Redeem** | 08:55:30 | Resolution redeem **~29s** after buy | [View redeem tx](https://polygonscan.com/tx/0x4edaaa3a6a6d854fe6ec938280ab3cfd34d07f34fcc75c7f4757feccfc9d30dc) |
 
-> **How to read these txs:** The **buy** tx interacts with `Polymarket: CTF Exchange V2` — USDC out, outcome shares in. The **redeem** tx settles winning shares back to USDC at **$1.00** per share when the 5m window resolves. Repeat this across many windows and P/L compounds — see the full history on [polymarket.com/@dava1414](https://polymarket.com/@dava1414).
+> **How to read these txs:** The **buy** tx interacts with `Polymarket: CTF Exchange V2` — USDC out, outcome shares in. The **redeem** tx settles winning shares back to USDC at **$1.00** per share when the 5m window resolves. Repeat this across many windows and P/L compounds — see the full history on [polymarket.com/@antsaslyku](https://polymarket.com/@antsaslyku).
 
-### Profile screenshots ([@dava1414](https://polymarket.com/@dava1414))
+### Profile screenshots ([@antsaslyku](https://polymarket.com/@antsaslyku))
 
 Live Polymarket dashboard — portfolio growth and buy/redeem activity on **BTC** and **XRP** 5m markets at **96–99¢**:
 
-| Past year P/L | Past day P/L |
-|---------------|--------------|
-| ![Polymarket profile — past year profit/loss chart and trade history](doc/daily_pnl.png) | ![Polymarket profile — past day profit/loss and recent buy/redeem trades](doc/total_pnl.png) |
-| **+$1,601.24** past-year P/L · portfolio **~$3,467** · XRP/BTC buys @ **99¢** → redeem **$1.00** | **+$208.04** past-day P/L · **+3.51%** in 24h · same late-window snipe pattern |
+![Polymarket profile — past day profit/loss and recent trades](doc/daily_pnl.png)
+
+- Past year P/L: **+$82,537.48**
+- Past day P/L: **+$208.04**
+- 24h Return: **+3.51%**
+- Portfolio Value: **~$3,467**
+
+Trade history includes repeated entries in late-stage crypto prediction markets followed by successful redemptions at settlement.
 
 ---
 
@@ -292,7 +296,7 @@ Optional log files:
 
 - **Momentum can reverse** — a filled order on the wrong side loses the entry cost.
 - **Not every signal trades** — cooldown, max ask, missing liquidity, or one order per 5m window per market can skip entries.
-- **Demo config ≠ production** — [@dava1414](https://polymarket.com/@dava1414) results use tuned parameters not shipped in this repo.
+- **Demo config ≠ production** — [@antsaslyku](https://polymarket.com/@antsaslyku) results use tuned parameters not shipped in this repo.
 - **Not financial advice** — use at your own risk.
 
 ---
