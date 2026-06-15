@@ -1,0 +1,9 @@
+/target
+**/*.rs.bk
+Cargo.lock
+config.json
+*.log
+trades.log
+traded_markets.cache
+.env
+/node_modules

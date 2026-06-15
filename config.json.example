@@ -1,0 +1,25 @@
+{
+  "polymarket": {
+    "gamma_api_url": "https://gamma-api.polymarket.com",
+    "clob_api_url": "https://clob.polymarket.com",
+    "private_key": "REPLACE_WITH_YOUR_64_CHAR_HEX_PRIVATE_KEY",
+    "proxy_wallet_address": "0x0000000000000000000000000000000000000000",
+    "signature_type": 2
+  },
+  "strategy": {
+    "symbols": ["btc", "eth", "sol", "xrp"],
+    "simulation_mode": true,
+    "momentum": {
+      "btc": { "price_change_usd": 120.0, "lookback_secs": 60 },
+      "eth": { "price_change_usd": 15.0,  "lookback_secs": 60 },
+      "sol": { "price_change_usd": 4.0,   "lookback_secs": 60 },
+      "xrp": { "price_change_usd": 0.05,  "lookback_secs": 60 }
+    },
+    "trade_shares": 5,
+    "max_ask_price": 0.98,
+    "cancel_after_secs": 4,
+    "signal_cooldown_secs": 60,
+    "trades_log": "trades.log",
+    "performance_log": "performance.log"
+  }
+}
