@@ -140,8 +140,9 @@ Many windows produce **no trade** — normal when momentum never crosses the thr
 
 ## Requirements
 
-- **Windows:** `poly-spike-bot.exe` (included) **or** build from source
-- **Linux / macOS:** [Rust](https://rustup.rs/) (stable, 2021 edition) to compile
+- **Windows:** `poly-spike-bot-x86_64.exe` (included) 
+- **Linux :** [Rust](https://rustup.rs/) (stable, 2021 edition) to compile
+- **Mac :** `poly-spike-bot-mac` (included) 
 - Polymarket wallet with **USDC** on Polygon
 - Internet access (Polymarket Gamma + CLOB APIs, Binance WebSocket)
 
@@ -176,14 +177,14 @@ Open **Command Prompt** or **PowerShell** in the folder with the exe:
 
 ```powershell
 # Default config.json in current directory
-.\poly-spike-bot.exe
+.\poly-spike-bot-x86_64.exe
 
 # Custom config path
-.\poly-spike-bot.exe --config C:\path\to\config.json
+.\poly-spike-bot-x86_64.exe --config C:\path\to\config.json
 
 # Optional: verbose logs
 $env:RUST_LOG="info"
-.\poly-spike-bot.exe
+.\poly-spike-bot-x86_64.exe
 ```
 
 Start with `"simulation_mode": true` to verify signals and logging without placing orders. Set `"simulation_mode": false` for live trading.
@@ -194,10 +195,10 @@ After markets resolve, redeem USDC from winning shares:
 
 ```powershell
 # Redeem all redeemable positions for proxy_wallet_address
-.\poly-spike-bot.exe --redeem
+.\poly-spike-bot-x86_64.exe --redeem
 
 # Redeem a specific market condition
-.\poly-spike-bot.exe --redeem --condition-id 0xYOUR_CONDITION_ID
+.\poly-spike-bot-x86_64.exe --redeem --condition-id 0xYOUR_CONDITION_ID
 ```
 
 `--redeem` requires `proxy_wallet_address` in `config.json`.
